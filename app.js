@@ -6,8 +6,6 @@ let correctGuess = true;
 let numberOfGuesses = 0;
 let guesses = [];
 
-let correctMultTries = `Correct ${player}! It took you ${numberOfGuesses} tries.`;
-
 startNewGame();
 
 //Continues running until guess is correct
@@ -40,9 +38,9 @@ function checkPlayer() {
 function reset() {
   secretNumber = Math.ceil(Math.random() * 100);
   console.log(secretNumber);
-  correctGuess = false;
   numberOfGuesses = 0;
   guesses = [];
+  correctGuess = false;
 }
 
 //Checks the players guess

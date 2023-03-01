@@ -81,16 +81,16 @@ function playAgain() {
 
 //Check if player is the same
 function isLastPlayer() {
-  let ans = prompt(`Are you ${player}? Please type Yes or No.`);
-  if (ans.toLowerCase() === "yes") {
-    startNewGame();
-  } else if (ans.toLowerCase() === "no") {
-    player = "";
-    startNewGame();
-  } else {
-    alert("Please type Yes or No");
-    isLastPlayer();
-  }
+  let ans = confirm(`Are you ${player}?`) ? startNewGame() : player=""; startNewGame();
+  // if (ans.toLowerCase() === "yes") {
+  //   startNewGame();
+  // } else if (ans.toLowerCase() === "no") {
+  //   player = "";
+  //   startNewGame();
+  // } else {
+  //   alert("Please type Yes or No");
+  //   isLastPlayer();
+  // }
 }
 
 //Different messages for different winning conditions

@@ -61,6 +61,7 @@ function winner() {
   correctGuess = true;
   winningMessage();
   allPlayers[player] = numberOfGuesses;
+  guesses.pop();
   alert(`Your guesses were ${guesses.join(", ")}.`);
   playAgain();
 }
@@ -81,7 +82,8 @@ function playAgain() {
 
 //Check if player is the same
 function isLastPlayer() {
-  let ans = confirm(`Are you ${player}?`) ? startNewGame() : player=""; startNewGame();
+  let ans = confirm(`Are you ${player}?`) ? startNewGame() : (player = "");
+  startNewGame();
   // if (ans.toLowerCase() === "yes") {
   //   startNewGame();
   // } else if (ans.toLowerCase() === "no") {
